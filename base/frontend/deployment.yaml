@@ -20,7 +20,7 @@ spec:
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
-              containerPort: 8081
+              containerPort: 8080
           env:
             - name: BACKEND_URL
               value: http://platform-demo-backend
