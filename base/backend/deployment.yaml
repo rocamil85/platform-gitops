@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: platform-demo-backend
+  labels:
+    app: platform-demo-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: platform-demo-backend
+  template:
+    metadata:
+      labels:
+        app: platform-demo-backend
+    spec:
+      containers:
+        - name: backend
+          image: us-central1-docker.pkg.dev/project-965520fc-7451-4c3b-a07/k8s-services-lab/platform-demo-backend:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 3
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 250m
+              memory: 256Mi

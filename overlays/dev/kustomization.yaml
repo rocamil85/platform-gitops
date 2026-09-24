@@ -1,0 +1,18 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: dev
+
+resources:
+  - namespace.yaml
+  - ../../base
+
+images:
+  - name: us-central1-docker.pkg.dev/project-965520fc-7451-4c3b-a07/k8s-services-lab/platform-demo-backend
+    digest: sha256:dea2f400b6d75da8c16a7bf8c9e5b18a1dd8b1d13f505846cef39615c4860cd3
+
+  - name: us-central1-docker.pkg.dev/project-965520fc-7451-4c3b-a07/k8s-services-lab/platform-demo-frontend
+    digest: sha256:77f4cc02dd543ed929cb355ec2ceca808cdec4bfdf2ce497e1f1efeba24d0f0d
+
+patches:
+  - path: frontend-service-patch.yaml
