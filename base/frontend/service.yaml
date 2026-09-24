@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: platform-demo-frontend
+  labels:
+    app: platform-demo-frontend
+spec:
+  type: ClusterIP
+  selector:
+    app: platform-demo-frontend
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
