@@ -59,7 +59,7 @@ for NAMESPACE in dev prod; do
   printf "Puede leer Secrets: "
   kubectl auth can-i get secrets \
     --as="system:serviceaccount:${NAMESPACE}:platform-observer" \
-    -n "${NAMESPACE}"
+    -n "${NAMESPACE}" || true
 
   EXTERNAL_IP=$(kubectl get service platform-demo-frontend \
     -n "${NAMESPACE}" \
