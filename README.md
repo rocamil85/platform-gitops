@@ -78,3 +78,20 @@ La plataforma CI/CD, los ambientes dev y prod, GitOps y los controles operaciona
 
 - [Arquitectura detallada](docs/architecture.md)
 - [Decisiones técnicas y solución de problemas](docs/decisions-and-troubleshooting.md)
+
+## Demostración del proyecto
+
+Con acceso configurado al clúster GKE, la plataforma completa puede comprobarse ejecutando:
+
+    ./scripts/demo.sh
+
+El script muestra:
+
+- Estado de las aplicaciones de Argo CD.
+- Deployments, Pods y Services de dev y prod.
+- Digests desplegados.
+- ResourceQuota, LimitRange y NetworkPolicies.
+- Validaciones de permisos RBAC.
+- Respuesta HTTP de ambos ambientes.
+
+La demostración no modifica recursos del clúster. Solamente consulta su estado y realiza pruebas HTTP.
