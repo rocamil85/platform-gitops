@@ -73,3 +73,7 @@ Resultado esperado para las aplicaciones:
 ## Estado
 
 La plataforma CI/CD, los ambientes dev y prod, GitOps y los controles operacionales se encuentran implementados y funcionando.
+
+## Documentación técnica
+
+- [Arquitectura detallada](docs/architecture.md)
