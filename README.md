@@ -77,3 +77,4 @@ La plataforma CI/CD, los ambientes dev y prod, GitOps y los controles operaciona
 ## Documentación técnica
 
 - [Arquitectura detallada](docs/architecture.md)
+- [Decisiones técnicas y solución de problemas](docs/decisions-and-troubleshooting.md)
