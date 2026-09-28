@@ -4,3 +4,7 @@ kind: Kustomization
 resources:
   - backend
   - frontend
+  - serviceaccounts.yaml
+  - resource-controls.yaml
+  - network-policies.yaml
+  - rbac.yaml
